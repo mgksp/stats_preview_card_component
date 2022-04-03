@@ -94,11 +94,13 @@ img {
 .stats-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  font-family: "Lexend Deca", sans-serif;
   font-size: 2.6rem;
+  font-weight: 700;
 }
 
 .stat span {
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
   text-transform: uppercase;
   font-size: 1.5rem;
   color: var(--white-o60);
