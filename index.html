@@ -3,19 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
     <title>Stats preview card component</title>
   </head>
   <body>
-    Get insights that help your business grow. Discover the benefits of data
-    analytics and make better decisions regarding revenue, customer experience,
-    and overall efficiency. 10k+ companies 314 templates 12m+ queries
+    <main class="card">
+      <div class="card-img-wrapper">
+        <img
+          id="desktop-img"
+          src="./images/image-header-desktop.jpg"
+          alt="card image"
+        />
+        <img
+          id="mobile-img"
+          src="./images/image-header-mobile.jpg"
+          alt="card image"
+        />
+      </div>
+      <div class="card-content">
+        <div>
+          <h1>
+            Get <span class="accent-color">insights</span> that help your
+            business grow.
+          </h1>
+          <p>
+            Discover the benefits of data analytics and make better decisions
+            regarding revenue, customer experience, and overall efficiency.
+          </p>
+        </div>
+        <div class="stats-container">
+          <div class="stat">
+            10k+ <br />
+            <span>companies</span>
+          </div>
+          <div class="stat">
+            314 <br />
+            <span>templates</span>
+          </div>
+          <div class="stat">
+            12M+ <br />
+            <span>queries</span>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <footer class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+      >. Coded by <a href="https://github.com/mgksp" target="_blank">Prabu</a>.
     </footer>
   </body>
 </html>

@@ -1,7 +1,166 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-blue: hsl(233, 47%, 7%);
+  --dark-desaturated-blue: hsl(244, 38%, 16%);
+
+  --soft-violet: hsl(277, 64%, 61%);
+
+  --white-o75: hsla(0, 0%, 100%, 0.75);
+  --white-o60: hsla(0, 0%, 100%, 0.6);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 1.5rem;
+  font-family: "Inter", sans-serif;
+  background-color: var(--dark-blue);
+  color: white;
+  display: grid;
+  place-items: center;
+}
+
+img {
+  display: block;
+}
+
+.accent-color {
+  color: var(--soft-violet);
+}
+
+.card {
+  width: 1080px;
+  background-color: var(--dark-desaturated-blue);
+  border-radius: 0.8rem;
+  overflow: hidden;
+  display: grid;
+  grid-template-areas: "ctnt img";
+}
+
+.card-img-wrapper {
+  grid-area: img;
+  width: max-content;
+  height: max-content;
+  overflow: hidden;
+  position: relative;
+}
+.card-img-wrapper::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--soft-violet);
+  opacity: 45%;
+}
+
+#mobile-img {
+  display: none;
+}
+
+.card-img-wrapper img {
+  height: 100%;
+}
+
+.card-content {
+  grid-area: ctnt;
+  padding: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-content h1 {
+  font-size: 3.8rem;
+  margin-bottom: 4rem;
+}
+
+.card-content p {
+  line-height: 1.5;
+  color: var(--white-o75);
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 2.6rem;
+}
+
+.stat span {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  color: var(--white-o60);
+}
+
 .attribution {
+  position: fixed;
+  bottom: 1rem;
+  width: 100vw;
   font-size: 11px;
   text-align: center;
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: var(--soft-violet);
+  display: inline-block;
+}
+.attribution a:hover {
+  transform: translateY(-10%);
+}
+
+@media (max-width: 1080px) {
+  #desktop-img {
+    display: none;
+  }
+  #mobile-img {
+    display: block;
+  }
+  .card {
+    grid-template-areas: "img" "ctnt";
+    width: max-content;
+  }
+  .card-content {
+    width: 60ch;
+    gap: 6rem;
+  }
+  .attribution {
+    position: static;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 660px) {
+  .card {
+    width: 37rem;
+  }
+  .card-img-wrapper {
+    width: 100%;
+  }
+  #mobile-img {
+    width: 100%;
+    object-fit: contain;
+  }
+  .card-content {
+    padding: 3rem;
+    width: 100%;
+    text-align: center;
+  }
+  .card-content h1 {
+    font-size: 3.2rem;
+  }
+  .stats-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
 }
